@@ -1,5 +1,6 @@
-function Player(sprite_sheet, x, y) {
+function Player(sprite_sheet, number, x, y) {
     this.sprite_sheet = sprite_sheet;
+    this.number = number;
 
     this.x = x+6;   // arbitrary addition to center the player inside the corresponding tile
     this.y = y;
