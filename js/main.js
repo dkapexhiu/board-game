@@ -56,8 +56,8 @@ function init() {
     weapons_sprite.src = '/board-game/img/tileset.png';
 
     // Initialize players
-    player[0] = new Player(player1, block_size, block_size);
-    player[1] = new Player(player2, width-2*block_size, height-2*block_size);
+    player[0] = new Player(player1, 0, block_size, block_size);
+    player[1] = new Player(player2, 1, width-2*block_size, height-2*block_size);
 
     // Array of players coordinates
     var player_coordinates = [];
