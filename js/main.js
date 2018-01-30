@@ -59,9 +59,6 @@ function init() {
     player[0] = new Player(player1, 0, block_size, block_size);
     player[1] = new Player(player2, 1, width-2*block_size, height-2*block_size);
 
-    // Array of players coordinates
-    var player_coordinates = [];
-
     // Initialize players coordinates
     for (var i = player.length - 1; i >= 0; i--) {
         player_coordinates.push([player[i].x, player[i].y]);
