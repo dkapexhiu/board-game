@@ -61,7 +61,7 @@ Player.prototype.move = function(player_coordinates) {
     var bottom_right_collision = board.level[board_y_down][board_x_right] >= 1;
 
     for (var i = player_coordinates.length - 1; i >= 0; i--) {
-        if (i === this.number) break;
+        if (i === this.number) continue;
         this.adjacentTo[i] = [Math.abs(player_coordinates[this.number][0] - player_coordinates[i][0]),
             Math.abs(player_coordinates[this.number][1] - player_coordinates[i][1])];
     }
