@@ -161,8 +161,7 @@ Player.prototype.move = function(player_coordinates) {
 
     // Update player coordinates in array
     player_coordinates[this.number] = [this.x, this.y];
-    this.startingPosition = [this.x, this.y];
-    console.log(this.startingPosition);
+    console.log(player_coordinates[this.number]);
 
     //log players positions
     if(this.left || this.right || this.up || this.down) {
@@ -178,7 +177,7 @@ Player.prototype.move = function(player_coordinates) {
         ys *= ys;     
         return Math.sqrt( xs + ys );
     };
-    console.log(Math.getDistance(this.x, this.y, this.startingPosition[0], this.startingPosition[1]));
+    console.log(Math.getDistance(this.startingPosition[0], this.startingPosition[1], this.x, this.y));
 
     return player_coordinates;
 
