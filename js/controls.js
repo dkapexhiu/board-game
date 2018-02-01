@@ -4,37 +4,33 @@ function input() {
         if (!paused)
             switch(event.keyCode) {
                 case 37:    // left arrow
-                    player[0].left = true;
+                    if(!player[0].endTurn) {player[0].left = true;}
                     break;
                 case 38:    // up arrow
-                    player[0].up = true;
+                    if(!player[0].endTurn) {player[0].up = true;}
                     break;
                 case 39:    // right arrow
-                    player[0].right = true;
+                    if(!player[0].endTurn) {player[0].right = true;}
                     break;
                 case 40:    // down arrow
-                    player[0].down = true;
+                    if(!player[0].endTurn) {player[0].down = true;}
                     break;
-                //case 32:    // space
-                    //if (player[0].bombs.length < player[0].bomb_limit)
-                        //player[0].release_bomb = true;
-                    //break;
                 case 65:    // a
-                    player[1].left = true;
+                    if(!player[1].endTurn) {player[1].left = true;}
                     break;
                 case 87:    // w
-                    player[1].up = true;
+                    if(!player[1].endTurn) {player[1].up = true;}
                     break;
                 case 68:    // d
-                    player[1].right = true;
+                    if(!player[1].endTurn) {player[1].right = true;}
                     break;
                 case 83:    // s
-                    player[1].down = true;
+                    if(!player[1].endTurn) {player[1].down = true;}
                     break;
-                //case 16:    // left shift
-                    //if (player[1].bombs.length < player[1].bomb_limit)
-                        //player[1].release_bomb = true;
-                    //break;
+                case 84:   // t
+                    player[0].endTurn = !player[0].endTurn;
+                    player[1].endTurn = !player[1].endTurn;
+                    break;
                 default:
                     break;
             }
@@ -77,7 +73,7 @@ function input() {
             case 80:    // p
                 console.log("Paused!");
                 paused = !paused;
-                break;
+                break;       
             default:
                 break;
         }
