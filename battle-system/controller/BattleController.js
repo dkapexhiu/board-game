@@ -34,71 +34,58 @@ var $Play1IceSpell1 = false;
 
 var $Play1LightningSpell1 = false;
 
-var $Play1FireSpell2 = false;
-
-var $Play1IceSpell2 = false;
-
-var $Play1LightningSpell2 = false;
-
-var $Play1FireSpell3 = false;
-
-var $Play1IceSpell3 = false;
-
-var $Play1LightningSpell3 = false;
-
 var $Play2FireSpell1 = false;
 
 var $Play2IceSpell1 = false;
 
 var $Play2LightningSpell1 = false;
 
-var $Play2FireSpell2 = false;
-
-var $Play2IceSpell2 = false;
-
-var $Play2LightningSpell2 = false;
-
-var $Play2FireSpell3 = false;
-
-var $Play2IceSpell3 = false;
-
-var $Play2LightningSpell3 = false;
-
 
 
 // Swords!---------------------------------------------------------------------------------------
 
-function Play1Star() {
-	window.$Play1StrVal = 27;
+var weapon0 = sessionStorage.getItem("weapon0");
+var weapon1 = sessionStorage.getItem("weapon1");
+
+switch(weapon0){
+	case 'star':
+		$Play1StrVal = 27;
+		break;
+	case 'cake':
+		$Play1StrVal = 29;
+		break;
+	case 'bread':
+		$Play1StrVal = 31;
+		break;
+	case 'laser':
+		$Play1StrVal = 33;
+		break;
+	default:
+		console.log("Not choosed");
 }
 
-function Play1Cake() {
-	$Play1StrVal = 29;
+switch(weapon1){
+	case 'star':
+		$Play2StrVal = 27;
+		break;
+	case 'cake':
+		$Play2StrVal = 29;
+		break;
+	case 'bread':
+		$Play2StrVal = 31;
+		break;
+	case 'laser':
+		$Play2StrVal = 33;
+		break;
+	default:
+		console.log("Not choosed");
 }
 
-function Play1Bread() {
-	$Play1StrVal = 31;
-}
+var weapon1 = sessionStorage.getItem("weapon0");
+document.getElementById("weapon0").innerHTML += weapon1;
 
-function Play1Laser() {
-	$Play1StrVal = 33;
-}
-
-function Play2Star() {
-	$Play2StrVal = 27;
-}
-
-function Play2Cake() {
-	$Play2StrVal = 29;
-}
-
-function Play2Bread() {
-	$Play2StrVal = 31;
-}
-
-function Play2Laser() {
-	$Play2StrVal = 33;
-}
+var weapon2 = sessionStorage.getItem("weapon1");
+document.getElementById("weapon1").innerHTML += weapon2;
 
 
 // PLAYER 1!! ----------------------------------------------------------------------------------
@@ -159,13 +146,7 @@ $(document).ready(function(){
 }); 
 
 
-
-
-
-
 // ABILITIES! -------------------------------------------------------------------------------------
-
-
 
 
 function Play1HolySheild() {
@@ -213,12 +194,7 @@ function Play2HolySheild() {
 
 }
 
-
-
 		// PLAYER 1 HEALING SPELLS
-
-
-
 
 function Play1HealSpell1() {
 	if ($Play1Mana >= 10) {
@@ -243,60 +219,7 @@ function Play1HealSpell1() {
 	}
 }
 
-function Play1HealSpell2() {
-	if ($Play1Mana >= 30) {
-		$Play1Mana = $Play1Mana - 30;
-		$Play1Health = $Play1Health + 60;
-		$round = $round + 0.5;
-		$(".Play1Attb").hide();
-		$(".P1Ab").hide();
-		$(".Play2Attb").show();
-		$(".P2Ab").show();
-		$('.Play1H').html("<br><br>" + "Health:" + ' ' + $Play1Health + '<br><br>' + "Mana:" + ' ' + $Play1Mana);
-		$('.Play2H').html("<br><br>" + "Health:" + ' ' + $Play2Health + '<br><br>' + "Mana:" + ' ' + $Play2Mana);
-		$('.BattleLog').html("Battle Log -- Round " + Math.floor($round) );
-		$('.AttScrn1').html("<br><br>" + "Player 1 Healed for 60 HP!");
-		$('.AttScrn2').html("");
-		$Play2Mana = $Play2Mana + 5;
-
-	}
-
-	else {
-		$('.AttScrn1').html("Not Enough Mana!");
-		$('.AttScrn2').html("");
-	}
-}
-
-function Play1HealSpell3() {
-	if ($Play1Mana >= 50) {
-		$Play1Mana = $Play1Mana - 50;
-		$Play1Health = $Play1Health + 100;
-		$round = $round + 0.5;
-		$(".Play1Attb").hide();
-		$(".P1Ab").hide();
-		$(".Play2Attb").show();
-		$(".P2Ab").show();
-		$('.Play1H').html("<br><br>" + "Health:" + ' ' + $Play1Health + '<br><br>' + "Mana:" + ' ' + $Play1Mana);
-		$('.Play2H').html("<br><br>" + "Health:" + ' ' + $Play2Health + '<br><br>' + "Mana:" + ' ' + $Play2Mana);
-		$('.BattleLog').html("Battle Log -- Round " + Math.floor($round) );
-		$('.AttScrn1').html("<br><br>" + "Player 1 Healed for 100 HP!");
-		$('.AttScrn2').html("");
-		$Play2Mana = $Play2Mana + 5;
-	}
-
-	else {
-		$('.AttScrn1').html("Not Enough Mana!");
-		$('.AttScrn2').html("");
-	}
-}
-
-
-
-
-
 			// PLAYER 2 HEAL SPELLS
-
-
 
 
 function Play2HealSpell1() {
@@ -321,53 +244,6 @@ function Play2HealSpell1() {
 		$('.AttScrn1').html("");
 	}
 }
-
-function Play2HealSpell2() {
-	if ($Play2Mana >= 30) {
-		$Play2Mana = $Play2Mana - 30;
-		$Play2Health = $Play2Health + 60;
-		$round = $round + 0.5;
-		$(".Play2Attb").hide();
-		$(".P2Ab").hide();
-		$(".Play1Attb").show();
-		$(".P1Ab").show();
-		$('.Play1H').html("<br><br>" + "Health:" + ' ' + $Play1Health + '<br><br>' + "Mana:" + ' ' + $Play1Mana);
-		$('.Play2H').html("<br><br>" + "Health:" + ' ' + $Play2Health + '<br><br>' + "Mana:" + ' ' + $Play2Mana);
-		$('.BattleLog').html("Battle Log -- Round " + Math.floor($round) );
-		$('.AttScrn2').html("<br><br>" + "Player 2 Healed for 60 HP!");
-		$('.AttScrn1').html("");
-		$Play1Mana = $Play1Mana + 5;
-	}
-
-	else {
-		$('.AttScrn2').html("Not Enough Mana!");
-		$('.AttScrn1').html("");
-	}
-}
-
-function Play2HealSpell3() {
-	if ($Play2Mana >= 50) {
-		$Play2Mana = $Play2Mana - 50;
-		$Play2Health = $Play2Health + 100;
-		$round = $round + 0.5;
-		$(".Play2Attb").hide();
-		$(".P2Ab").hide();
-		$(".Play1Attb").show();
-		$(".P1Ab").show();
-		$('.Play1H').html("<br><br>" + "Health:" + ' ' + $Play1Health + '<br><br>' + "Mana:" + ' ' + $Play1Mana);
-		$('.Play2H').html("<br><br>" + "Health:" + ' ' + $Play2Health + '<br><br>' + "Mana:" + ' ' + $Play2Mana);
-		$('.BattleLog').html("Battle Log -- Round " + Math.floor($round) );
-		$('.AttScrn2').html("<br><br>" + "Player 1 Healed for 100 HP!");
-		$('.AttScrn1').html("");
-		$Play1Mana = $Play1Mana + 5;
-	}
-
-	else {
-		$('.AttScrn2').html("Not Enough Mana!");
-		$('.AttScrn1').html("");
-	}
-}
-
 
 
 
@@ -425,116 +301,8 @@ function Play2HealSpell3() {
 		}
 	}
 
-	function Play1FireSpell2() {
-
-		if ($Play1Mana >= 30) {
-			$Play1FireSpell2 = true;
-			attack1();
-			$(".Play1Attb").hide();
-			$(".P1Ab").hide();
-			$(".Play2Attb").show();
-			$(".P2Ab").show();
-		}
-
-		else {
-			$('.AttScrn1').html("Not Enough Mana!");
-			$('.AttScrn2').html("");
-		}
-	}
-
-	function Play1IceSpell2() {
-
-		if ($Play1Mana >= 30) {
-			$Play1IceSpell2 = true;
-			attack1();
-			$(".Play1Attb").hide();
-			$(".P1Ab").hide();
-			$(".Play2Attb").show();
-			$(".P2Ab").show();
-		}
-
-		else {
-			$('.AttScrn1').html("Not Enough Mana!");
-			$('.AttScrn2').html("");
-		}
-	}
-
-	function Play1LightningSpell2() {
-
-		if ($Play1Mana >= 30) {
-			$Play1LightningSpell2 = true;
-			attack1();
-			$(".Play1Attb").hide();
-			$(".P1Ab").hide();
-			$(".Play2Attb").show();
-			$(".P2Ab").show();
-		}
-
-		else {
-			$('.AttScrn1').html("Not Enough Mana!");
-			$('.AttScrn2').html("");
-		}
-	}
-
-	function Play1FireSpell3() {
-
-		if ($Play1Mana >= 50) {
-			$Play1FireSpell3 = true;
-			attack1();
-			$(".Play1Attb").hide();
-			$(".P1Ab").hide();
-			$(".Play2Attb").show();
-			$(".P2Ab").show();
-		}
-
-		else {
-			$('.AttScrn1').html("Not Enough Mana!");
-			$('.AttScrn2').html("");
-		}
-	}
-
-	function Play1IceSpell3() {
-
-		if ($Play1Mana >= 50) {
-			$Play1IceSpell3 = true;
-			attack1();
-			$(".Play1Attb").hide();
-			$(".P1Ab").hide();
-			$(".Play2Attb").show();
-			$(".P2Ab").show();
-		}
-
-		else {
-			$('.AttScrn1').html("Not Enough Mana!");
-			$('.AttScrn2').html("");
-		}
-	}
-
-	function Play1LightningSpell3() {
-
-		if ($Play1Mana >= 50) {
-			$Play1LightningSpell3 = true;
-			attack1();
-			$(".Play1Attb").hide();
-			$(".P1Ab").hide();
-			$(".Play2Attb").show();
-			$(".P2Ab").show();
-		}
-
-		else {
-			$('.AttScrn1').html("Not Enough Mana!");
-			$('.AttScrn2').html("");
-		}
-	}
-
-
-
-
-
 
   	// PLAYER ONE MELEE ATTACK FUNCTION // ----------------------------------------------------------------------------
-
-
 
 			function attack1() {
 
@@ -542,29 +310,27 @@ function Play2HealSpell3() {
 
 
 	if ($Play1StrVal == 27) {
-			$Play1Att =  Math.floor((Math.random() * 300) + (Math.random() *300)); 
+			$Play1Att =  Math.floor((Math.random() * 10) + (Math.random() *10)); 
 	}
 
 	else if ($Play1StrVal == 29) {
-			$Play1Att =  Math.floor((Math.random() * 700) + (Math.random() *700)); 
+			$Play1Att =  Math.floor((Math.random() * 20) + (Math.random() *20)); 
 	}
 
 	else if ($Play1StrVal == 31) {
-			$Play1Att =  Math.floor((Math.random() * 1100) + (Math.random() *1100)); 
+			$Play1Att =  Math.floor((Math.random() * 40) + (Math.random() *40)); 
 	}
 
 	else if ($Play1StrVal == 33) {
-			$Play1Att =  Math.floor((Math.random() * 1600) + (Math.random() *1600));
+			$Play1Att =  Math.floor((Math.random() * 50) + (Math.random() *50));
 	}
 
 	else {
 		alert("Games Broken!")
 	}
 
-
 			// FACTORING ENEMY DEFENSE WITH PLAYER 1 ATTACK
-
-		
+	
 			var $AttScale = ($Play2DefVal/$Play1StrVal) * 30;
 			$Play1Att = Math.floor( ($Play1Att - ($AttScale / 100) * $Play1Att));
 			
@@ -577,48 +343,14 @@ function Play2HealSpell3() {
 				$Play1Mana = $Play1Mana - 10;
 			}
 
-			else if ($Play1FireSpell2 == true) {
-				$Play1Att = 40;
-				$Play1Mana = $Play1Mana - 30;
-			}
-		
-
-			else if ($Play1FireSpell3 == true) {
-				$Play1Att = 60;
-				$Play1Mana = $Play1Mana - 50;
-			}
-
 			else if ($Play1IceSpell1 == true) {
 				$Play1Att = 20;
 				$Play1Mana = $Play1Mana - 10;
 			}
-		
-
-			else if ($Play1IceSpell2 == true) {
-				$Play1Att = 40;
-				$Play1Mana = $Play1Mana - 30;
-			}
-
-			else if ($Play1IceSpell3 == true) {
-				$Play1Att = 60;
-				$Play1Mana = $Play1Mana - 50;
-			}
-		
 
 			else if ($Play1LightningSpell1 == true) {
 				$Play1Att = 20;
 				$Play1Mana = $Play1Mana - 10;
-			}
-
-			else if ($Play1LightningSpell2 == true) {
-				$Play1Att = 40;
-				$Play1Mana = $Play1Mana - 30;
-			}
-		
-
-			else if ($Play1LightningSpell3 == true) {
-				$Play1Att = 60;
-				$Play1Mana = $Play1Mana - 50;
 			}
 
 			else {
@@ -640,8 +372,6 @@ function Play2HealSpell3() {
 				} 
 
 				$Play2Health = $Play2Health - $Play1Att;
-
-
 
 			// BATTLE LOGS!!!
 			$Play2Mana = $Play2Mana + 5;
@@ -667,22 +397,13 @@ function Play2HealSpell3() {
 			$Play1Turn = false;
 			$Play2Turn = true;
 
-			// ABULITY RESETS AND MANA INCREASE!!!
+			// ABiLITY RESETS AND MANA INCREASE!!!
 
 			$Play2HolySheild = false;
 			$Play1FireSpell1 = false;
-			$Play1FireSpell2 = false;
-			$Play1FireSpell3 = false;
 			$Play1IceSpell1 = false;
-			$Play1IceSpell2 = false;
-			$Play1IceSpell3 = false;
 			$Play1LightningSpell1 = false;
-			$Play1LightningSpell2 = false;
-			$Play1LightningSpell3 = false;
-
 	}
-
-
 
 	// PLAYER 2 ATTACK SPELLS FUNCTION
 
@@ -737,139 +458,30 @@ function Play2HealSpell3() {
 		}
 	}
 
-	function Play2FireSpell2() {
-
-		if ($Play2Mana >= 30) {
-			$Play2FireSpell2 = true;
-			attack2();
-		$(".Play2Attb").hide();
-		$(".P2Ab").hide();
-		$(".Play1Attb").show();
-		$(".P1Ab").show();
-		
-		}
-
-		else {
-			$('.AttScrn2').html("Not Enough Mana!");
-			$('.AttScrn1').html("");
-		}
-	}
-
-	function Play2IceSpell2() {
-
-		if ($Play2Mana >= 30) {
-			$Play2IceSpell2 = true;
-			attack2();
-		$(".Play2Attb").hide();
-		$(".P2Ab").hide();
-		$(".Play1Attb").show();
-		$(".P1Ab").show();
-		}
-
-		else {
-			$('.AttScrn2').html("Not Enough Mana!");
-			$('.AttScrn1').html("");
-		}
-	}
-
-	function Play2LightningSpell2() {
-
-		if ($Play2Mana >= 30) {
-			$Play2LightningSpell2 = true;
-			attack2();
-		$(".Play2Attb").hide();
-		$(".P2Ab").hide();
-		$(".Play1Attb").show();
-		$(".P1Ab").show();
-		}
-
-		else {
-			$('.AttScrn2').html("Not Enough Mana!");
-			$('.AttScrn1').html("");
-		}
-	}
-
-	function Play2FireSpell3() {
-
-		if ($Play2Mana >= 50) {
-			$Play2FireSpell3 = true;
-			attack2();
-		$(".Play2Attb").hide();
-		$(".P2Ab").hide();
-		$(".Play1Attb").show();
-		$(".P1Ab").show();
-		}
-
-		else {
-			$('.AttScrn2').html("Not Enough Mana!");
-			$('.AttScrn1').html("");
-		}
-	}
-
-	function Play2IceSpell3() {
-
-		if ($Play2Mana >= 50) {
-			$Play2IceSpell3 = true;
-			attack2();
-		$(".Play2Attb").hide();
-		$(".P2Ab").hide();
-		$(".Play1Attb").show();
-		$(".P1Ab").show();
-		}
-
-		else {
-			$('.AttScrn2').html("Not Enough Mana!");
-			$('.AttScrn1').html("");
-		}
-	}
-
-	function Play2LightningSpell3() {
-
-		if ($Play2Mana >= 50) {
-			$Play2LightningSpell3 = true;
-			attack2();
-		$(".Play2Attb").hide();
-		$(".P2Ab").hide();
-		$(".Play1Attb").show();
-		$(".P1Ab").show();
-		}
-
-		else {
-			$('.AttScrn2').html("Not Enough Mana!");
-			$('.AttScrn1').html("");
-		}
-	};
-
-
-
 
 	// PLAYER 2 MELEE ATTACK FUNTION ---------------------------------------------------------------------------------
-
-
 
 	function attack2() {
 
 	if ($Play2StrVal == 27) {
-			$Play2Att =  Math.floor((Math.random() * 300) + (Math.random() *300)); 
+			$Play2Att =  Math.floor((Math.random() * 10) + (Math.random() *10)); 
 	}
 
 	else if ($Play2StrVal == 29) {
-			$Play2Att =  Math.floor((Math.random() * 700) + (Math.random() *700)); 
+			$Play2Att =  Math.floor((Math.random() * 20) + (Math.random() *20)); 
 	}
 
 	else if ($Play2StrVal == 31) {
-			$Play2Att =  Math.floor((Math.random() * 1100) + (Math.random() *1100)); 
+			$Play2Att =  Math.floor((Math.random() * 40) + (Math.random() *40)); 
 	}
 
 	else if ($Play2StrVal == 33) {
-			$Play2Att =  Math.floor((Math.random() * 1600) + (Math.random() *1600)); 
+			$Play2Att =  Math.floor((Math.random() * 50) + (Math.random() *50)); 
 	}
 
 	else {
 		alert("Games Broken!")
 	}
-
-
 
 			// FACTORING ENEMY DEFENSE WITH PLAYER 2 ATTACK
 
@@ -900,48 +512,14 @@ function Play2HealSpell3() {
 				$Play2Mana = $Play2Mana - 10;
 			}
 
-			else if ($Play2FireSpell2 == true) {
-				$Play2Att = 40;
-				$Play2Mana = $Play2Mana - 30;
-			}
-		
-
-			else if ($Play2FireSpell3 == true) {
-				$Play2Att = 60;
-				$Play2Mana = $Play2Mana - 50;
-			}
-
 			else if ($Play2IceSpell1 == true) {
 				$Play2Att = 20;
 				$Play2Mana = $Play2Mana - 10;
 			}
-		
-
-			else if ($Play2IceSpell2 == true) {
-				$Play2Att = 40;
-				$Play2Mana = $Play2Mana - 30;
-			}
-
-			else if ($Play2IceSpell3 == true) {
-				$Play2Att = 60;
-				$Play2Mana = $Play2Mana - 50;
-			}
-		
 
 			else if ($Play2LightningSpell1 == true) {
 				$Play2Att = 20;
 				$Play2Mana = $Play2Mana - 10;
-			}
-
-			else if ($Play2LightningSpell2 == true) {
-				$Play2Att = 40;
-				$Play2Mana = $Play2Mana - 30;
-			}
-		
-
-			else if ($Play2LightningSpell3 == true) {
-				$Play2Att = 60;
-				$Play2Mana = $Play2Mana - 50;
 			}
 
 			else {
@@ -953,8 +531,6 @@ function Play2HealSpell3() {
 
 
 			$Play1Health = $Play1Health - $Play2Att;
-
-
 
 			// BATTLE LOGS!!!
 
@@ -985,15 +561,7 @@ function Play2HealSpell3() {
 
 			$Play1HolySheild = false;
 			$Play2FireSpell1 = false;
-			$Play2FireSpell2 = false;
-			$Play2FireSpell3 = false;
 			$Play2IceSpell1 = false;
-			$Play2IceSpell2 = false;
-			$Play2IceSpell3 = false;
 			$Play2LightningSpell1 = false;
-			$Play2LightningSpell2 = false;
-			$Play2LightningSpell3 = false;
-			
-
 	};
 
