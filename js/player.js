@@ -1,8 +1,8 @@
-function Player(sprite_sheet, number, x, y) {
+function Player(sprite_sheet, number, x, y, endTurn) {
     this.sprite_sheet = sprite_sheet;
     this.number = number;
 
-    this.x = x+6;   // arbitrary addition to center the player inside the corresponding tile
+    this.x = x;
     this.y = y;
 
     this.alive = true;
@@ -19,11 +19,11 @@ function Player(sprite_sheet, number, x, y) {
     this.down = false;
 
     // Sprite animation
-    this.frame = new Array(4);
-    this.frame["left"] = 0;
-    this.frame["up"] = 0;
-    this.frame["right"] = 0;
-    this.frame["down"] = 0;
+    //this.frame = new Array(4);
+    //this.frame["left"] = 0;
+    //this.frame["up"] = 0;
+    //this.frame["right"] = 0;
+    //this.frame["down"] = 0;
 
     // Movement direction
     this.direction = "down";
@@ -34,6 +34,13 @@ function Player(sprite_sheet, number, x, y) {
     //find the adjacent player
     this.adjacentTo = [[0, 0], [0, 0]];
     this.adjacentToPlayer = [false, false];
+
+    //turns
+    this.endTurn = endTurn;
+
+    //starting position
+    this.startingPosition = [x,y];
+    console.log(this.startingPosition);
 
 }
 
@@ -154,11 +161,24 @@ Player.prototype.move = function(player_coordinates) {
 
     // Update player coordinates in array
     player_coordinates[this.number] = [this.x, this.y];
+    this.startingPosition = [this.x, this.y];
+    console.log(this.startingPosition);
 
     //log players positions
     if(this.left || this.right || this.up || this.down) {
         console.log(this.adjacentToPlayer);
+        if(this.adjacentToPlayer[0] == true && this.adjacentToPlayer[1] == true){
+            window.location.href = '../battle-system/index.html';
+        }
     }
+
+    Math.getDistance = function( x1, y1, x2, y2 ) {
+        var xs = x2 - x1, ys = y2 - y1;        
+        xs *= xs;
+        ys *= ys;     
+        return Math.sqrt( xs + ys );
+    };
+    console.log(Math.getDistance(this.x, this.y, this.startingPosition[0], this.startingPosition[1]));
 
     return player_coordinates;
 
