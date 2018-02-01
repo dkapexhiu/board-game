@@ -40,7 +40,6 @@ function Player(sprite_sheet, number, x, y, endTurn) {
 
     //starting position
     this.startingPosition = [x,y];
-    console.log(this.startingPosition);
 
 }
 
@@ -161,23 +160,28 @@ Player.prototype.move = function(player_coordinates) {
 
     // Update player coordinates in array
     player_coordinates[this.number] = [this.x, this.y];
-    console.log(player_coordinates[this.number]);
+    //console.log(player_coordinates[this.number]);
 
     //log players positions
     if(this.left || this.right || this.up || this.down) {
-        console.log(this.adjacentToPlayer);
+        //console.log(this.adjacentToPlayer);
         if(this.adjacentToPlayer[0] == true && this.adjacentToPlayer[1] == true){
             window.location.href = '../battle-system/index.html';
         }
     }
 
-    Math.getDistance = function( x1, y1, x2, y2 ) {
+    function getDistance ( x1, y1, x2, y2 ) {
         var xs = x2 - x1, ys = y2 - y1;        
         xs *= xs;
         ys *= ys;     
         return Math.sqrt( xs + ys );
     };
-    console.log(Math.getDistance(this.startingPosition[0], this.startingPosition[1], this.x, this.y));
+    var distance = getDistance(this.startingPosition[0], this.startingPosition[1], this.x, this.y);
+    //console.log(distance);
+
+    if(distance > 120){
+        this.endTurn = true;
+    }
 
     return player_coordinates;
 
