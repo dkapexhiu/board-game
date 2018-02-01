@@ -10,7 +10,7 @@ var block_size = 40;
 // Array of players
 var player = [];
 
-// Array of players' coordinates
+// Array of players coordinates
 var player_coordinates = [];
 
 // Sprites
@@ -51,13 +51,13 @@ function init() {
     player2 = new Image();
     weapons_sprite = new Image();
 
-    player1.src = '/board-game/img/player1.png';
-    player2.src = '/board-game/img/player2.png';
-    weapons_sprite.src = '/board-game/img/tileset.png';
+    player1.src = '../img/player1.png';
+    player2.src = '../img/player2.png';
+    weapons_sprite.src = '../img/tileset.png';
 
     // Initialize players
-    player[0] = new Player(player1, 0, block_size, block_size);
-    player[1] = new Player(player2, 1, width-2*block_size, height-2*block_size);
+    player[0] = new Player(player1, 0, block_size, block_size, false);
+    player[1] = new Player(player2, 1, width-2*block_size, height-2*block_size, true);
 
     // Initialize players coordinates
     for (var i = player.length - 1; i >= 0; i--) {
@@ -92,7 +92,7 @@ function update() {
 
         if (player[i].alive) {
 
-            // Update player position and sprite animation
+            // Update player position
             player_coordinates =  player[i].move(player_coordinates);
 
             // Check if player is stepping on a weapon and have him pick it up
