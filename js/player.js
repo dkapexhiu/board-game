@@ -41,6 +41,9 @@ function Player(sprite_sheet, number, x, y, endTurn) {
     //starting position
     this.startingPosition = [x,y];
 
+    //distance
+    this.distance = 0;
+
 }
 
 Player.prototype.move = function(player_coordinates) {
@@ -176,10 +179,12 @@ Player.prototype.move = function(player_coordinates) {
         ys *= ys;     
         return Math.sqrt( xs + ys );
     };
-    var distance = getDistance(this.startingPosition[0], this.startingPosition[1], this.x, this.y);
+    distance = getDistance(this.startingPosition[0], this.startingPosition[1], this.x, this.y);
     //console.log(distance);
 
     if(distance > 120){
+        this.startingPosition = [this.x, this.y];
+        this.distance = 0;
         this.endTurn = true;
     }
 
@@ -218,23 +223,31 @@ Player.prototype.add_weapon = function(weapon) {
     switch(weapon) {
         case 1:
             // Increases strength by 3
-            console.log('strength+3');
+            console.log('strength + 3: star');
+            sessionStorage.clear();
             this.strength + 3;
+            sessionStorage.setItem("weapon", "star");
             break;
         case 2:
             // Increases strength by 5
-            console.log('strength+5');
+            console.log('strength + 5: cake');
+            sessionStorage.clear();
             this.strength + 5;
+            sessionStorage.setItem("weapon", "cake");
             break;
         case 3:
             // Increases strength by 7
-            console.log('strength+7');
+            console.log('strength + 7: bread');
+            sessionStorage.clear();
             this.strength + 7;
+            sessionStorage.setItem("weapon", "bread");
             break;
         case 4:
             // Increases strength by 10
-            console.log('strength+10');
+            console.log('strength + 10: laser');
+            sessionStorage.clear();
             this.strength + 10;
+            sessionStorage.setItem("weapon", "laser");
             break;
     }
 }
