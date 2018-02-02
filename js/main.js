@@ -56,8 +56,12 @@ function init() {
     weapons_sprite.src = '../img/tileset.png';
 
     // Initialize players
-    player[0] = new Player(player1, 0, block_size, block_size, false);
-    player[1] = new Player(player2, 1, width-2*block_size, height-2*block_size, true);
+    for (var i = 0; i < board.width; i++)
+        for (var j = 0; j < board.height; j++)
+            if (board.level[i][j] !== 2) {
+                player[0] = new Player(player1, 0, Math.floor(Math.random()*width), Math.floor(Math.random()*height), false);
+                player[1] = new Player(player2, 1, Math.floor(Math.random()*width), Math.floor(Math.random()*height), true);
+            }
 
     // Initialize players coordinates
     for (var i = player.length - 1; i >= 0; i--) {
@@ -114,8 +118,8 @@ function draw() {
     // Clear screen (erase everything)
     context.clearRect(0, 0, width, height);
 
-    // Fill background with pitch white
-    context.fillStyle = "rgba(255, 255, 255, 1)";
+    // Fill background
+    context.fillStyle = "rgba(0, 191, 255, 1)";
     draw_block(0, 0, width, height);
 
     // Draw weapons
