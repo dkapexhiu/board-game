@@ -8,7 +8,6 @@ Use the arrow keys to control the first player (the guy) and to gather weapons o
 
 If the two players are near then the battle starts. In the battle it will be shown the weapons choosed by the players and then the players can start the battle. Then the interface is very simple and the players in turns can use attacks, spells or holy shields.
 
-Here a screenshot of gameplay:
 <img src="https://github.com/dkapexhiu/board-game/blob/master/img/screenshot.png">
 
 For every question or issue you have, you can start an issue on GitHub.
