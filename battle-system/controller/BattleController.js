@@ -42,7 +42,7 @@ var $Play2LightningSpell1 = false;
 
 
 
-// Swords!---------------------------------------------------------------------------------------
+// Weapons---------------------------------------------------------------------------------------
 
 var weapon0 = sessionStorage.getItem("weapon0");
 var weapon1 = sessionStorage.getItem("weapon1");
@@ -81,11 +81,15 @@ switch(weapon1){
 		console.log("Not choosed");
 }
 
+$(document).ready(function(){
+
 var weapon1 = sessionStorage.getItem("weapon0");
 document.getElementById("weapon0").innerHTML += weapon1;
 
 var weapon2 = sessionStorage.getItem("weapon1");
 document.getElementById("weapon1").innerHTML += weapon2;
+
+}); 
 
 
 // PLAYER 1!! ----------------------------------------------------------------------------------
