@@ -2,9 +2,9 @@
 <html>
 <head>
 <title>Battle System</title>
-<script src="dep/jquery-3.1.1.min.js"></script>
-<script src="controller/BattleController.js"></script>
-<link href="css/Battle-System.css" rel="stylesheet" type="text/css">
+<script src="../board-game/battle-system/dep/jquery-3.1.1.min.js"></script>
+<script src="../board-game/battle-system/controller/BattleController.js"></script>
+<link href="../board-game/battle-system/css/Battle-System.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -28,13 +28,13 @@
 
 <div id="GameOver">
 <h1>Game Over!  Play Again?</h1>
-<input type="button" value="Yes!" onClick="window.location.reload()">
+<input type="button" value="Yes!" onClick="window.location.href='../index.html'" id="gameOverBtn">
 </div>
 
 <!-- Top Table // Battle Field -->
 
 
-<table class="BattleField" style="width:100%; border:solid; border-color:green; border-width:5px; height:100%">
+<table class="BattleField">
   <tr>
     <th class="empty">Player 1</th>
     <th class="empty"><p class='BattleLog'></p></th> 
@@ -42,7 +42,7 @@
   </tr>
   <tr>
     <td class="empty"><p class='Play1H'></p><p class="Play1Mana"></p></td>
-    <td class="attScrn"><strong><p style="color:black; font-size:2vw;" class="AttScrn1"></p><p style="color:black; font-size:2vw" class="AttScrn2"></p></strong></td>
+    <td class="attScrn"><strong><p class="AttScrn1"></p><p class="AttScrn2"></p></strong></td>
     <td class="empty"><p class="Play2H"><p class="Play2Mana"></p></p></td>
   </tr>
   <tr>
@@ -106,7 +106,7 @@
   <!-- Player 1 Holy Sheild -->
 
 
-    <td class="Play1Abilities" onclick="Play1HolySheild()"><button id="P1HS" class="HolySheild1 P1Ab">Holy Sheild</button></td>
+    <td class="Play1Abilities" onclick="Play1HolySheild()"><button id="P1HS" class="HolySheild1 P1Ab">Holy Shield</button></td>
 
     <td class="none"></td>
 
@@ -114,7 +114,7 @@
     <!-- Player 2 Holy Sheild -->
 
 
-    <td class="Play2Abilities" onclick="Play2HolySheild()"><button id="P2HS" class="HolySheild2 P2Ab">Holy Sheild</button></td>
+    <td class="Play2Abilities" onclick="Play2HolySheild()"><button id="P2HS" class="HolySheild2 P2Ab">Holy Shield</button></td>
   </tr>
 </table>
 
