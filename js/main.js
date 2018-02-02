@@ -51,9 +51,9 @@ function init() {
     player2 = new Image();
     weapons_sprite = new Image();
 
-    player1.src = '../img/player1.png';
-    player2.src = '../img/player2.png';
-    weapons_sprite.src = '../img/tileset.png';
+    player1.src = '../board-game/img/player1.png';
+    player2.src = '../board-game/img/player2.png';
+    weapons_sprite.src = '../board-game/img/tileset.png';
 
     // Initialize players
     for (var i = 0; i < board.width; i++)
