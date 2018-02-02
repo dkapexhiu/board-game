@@ -59,8 +59,8 @@ function init() {
     for (var i = 0; i < board.width; i++)
         for (var j = 0; j < board.height; j++)
             if (board.level[i][j] !== 2) {
-                player[0] = new Player(player1, 0, Math.floor(Math.random()*width), Math.floor(Math.random()*height), false);
-                player[1] = new Player(player2, 1, Math.floor(Math.random()*width), Math.floor(Math.random()*height), true);
+                player[0] = new Player(player1, 0, block_size, block_size,  false);
+                player[1] = new Player(player2, 1, width-2*block_size, height-2*block_size, true);
             }
 
     // Initialize players coordinates
