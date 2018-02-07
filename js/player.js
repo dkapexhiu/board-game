@@ -185,6 +185,10 @@ Player.prototype.move = function(player_coordinates) {
     if(distance > 120){
         this.endTurn = true;
         this.startingPosition = [this.x, this.y];
+        this.left = false;
+        this.right = false;
+        this.up = false;
+        this.down = false;
     }
 
     return player_coordinates;
