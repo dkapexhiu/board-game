@@ -12,3 +12,4 @@ If the two players are near then the battle starts. In the battle it will be sho
 
 For every question or issue you have, you can start an issue on GitHub.
 
+This project is licensed under the GNU GENERAL PUBLIC LICENSE.
