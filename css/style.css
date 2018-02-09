@@ -1,3 +1,7 @@
 body {
     background-image: url("/board-game/img/underwater.png");
 }
+
+.description {
+    color: aliceblue;
+}
