@@ -1,0 +1,79 @@
+body {
+    background-image: url("../img/underwater.png");
+}
+
+.description {
+    color: aliceblue;
+    text-align:center;
+    font-weight: 80;
+    font-size: 32px;
+    margin-bottom: 0px;
+}
+
+#title{
+    text-align:center;
+    color:white;
+    font-weight: 800;
+    font-size: 4.375rem;
+    line-height: 5rem;
+    margin-bottom: 0px;
+}
+h1 a{
+    text-decoration: none;
+    color:white;
+}
+#title2{
+    font-size: 1.7em;
+    margin-bottom: 40px;
+    line-height: 3rem;
+    color: white;
+    text-align: center;
+}
+form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+#play{
+    margin-left: 20px;
+    margin-right:20px;
+    order:3;
+    height: 45px;
+    font-size: .875rem;
+    display: inline-block;
+    background-color: greenyellow;
+    text-transform: uppercase;
+    border-radius: 21px;
+    letter-spacing: .5px;
+    cursor: pointer;
+}
+
+#help{
+    margin-left: 20px;
+    margin-right:20px;
+    order:3;
+    height: 45px;
+    font-size: .875rem;
+    display: inline-block;
+    background-color: yellow;
+    text-transform: uppercase;
+    border-radius: 21px;
+    letter-spacing: .5px;
+    cursor: pointer;
+}
+#credits{
+    margin-left: 20px;
+    margin-right:20px;
+    order:3;
+    height: 45px;
+    font-size: .875rem;
+    display: inline-block;
+    color: #fff;
+    background-color: red;
+    text-transform: uppercase;
+    border-radius: 21px;
+    letter-spacing: .5px;
+    cursor: pointer;
+}
