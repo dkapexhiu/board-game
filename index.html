@@ -1,45 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Board Game</title>
-    <link rel="stylesheet" type="text/css" href="/board-game/css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-</head>
-<body>
-<div class="row container-fluid">
-    <div class="col-lg-6 col-md-6 col-sm-12">
-        <h4 class="description text-justify">
-            How to play: <br>
-            The goal of this game is to gather the most powerful weapon and to win against the other player in the battle.<br>
-            The players start with a strength of 25 and this strength is increased by gathering weapons on board:<br>
-            Star: +3 strength, Cake: +5 strength, Bread: +7 strength, Laser: +10 strength.<br>
-            Use the arrow keys to control the first player (the guy) and to gather weapons on board.<br> 
-            Now you can use WASD keys to control the second player (the girl) and to gather weapons on board.<br> 
-            Then press T button to change the turn or after moving 120 px the player can not move towards.<br>
-            If the two players are near then the battle starts. <br>
-            In the battle it will be shown the weapons choosed by the players and then the players can start the battle.<br>
-            Then the interface is very simple and the players in turns can use attacks, spells or holy shields.<br>
-            Remember that at anytime you can pause the game by pressing P button.<br>
-            Have fun and play good!
-        </h4>
-    </div>
-    <div class="col-lg-6 col-md-6 col-sm-12">
-        <canvas id="game" width="600" height="600"></canvas>
-    </div>
-</div>  
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Board Game</title>
+        <link rel="stylesheet" type="text/css" href="/board-game/css/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    </head>
+    <body>
 
-<script src="/board-game/js/utils.js"></script>
-<script src="/board-game/js/levels.js"></script>
-<script src="/board-game/js/board.js"></script>
-<script src="/board-game/js/player.js"></script>
-<script src="/board-game/js/controls.js"></script>
-<script src="/board-game/js/main.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <canvas id="game" width="600" height="600"></canvas>
+        </div> 
 
-</body>
+        <script src="/board-game/js/utils.js"></script>
+        <script src="/board-game/js/levels.js"></script>
+        <script src="/board-game/js/board.js"></script>
+        <script src="/board-game/js/player.js"></script>
+        <script src="/board-game/js/controls.js"></script>
+        <script src="/board-game/js/main.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    </body>
 </html>
