@@ -83,9 +83,13 @@ form{
     font-size: .875rem;
     display: inline-block;
     color: #fff;
-    background-color: purple;
+    background-color: royalblue;
     text-transform: uppercase;
     border-radius: 21px;
     letter-spacing: .5px;
     cursor: pointer;
+}
+table {
+    font-size: 30px;
+    color: white; 
 }
