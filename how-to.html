@@ -8,21 +8,40 @@
     <link rel="stylesheet" type="text/css" href="/board-game/css/style.css">
 </head>
 <body>
-
-    <h4 class="description">
-        How to play: <br>
-        The goal of this game is to gather the most powerful weapon and to win against the other player in the battle.<br>
-        The players start with a strength of 25 and this strength is increased by gathering weapons on board:<br>
-        Star: +3 strength, Cake: +5 strength, Bread: +7 strength, Laser: +10 strength.<br>
-        Use the arrow keys to control the first player (the guy) and to gather weapons on board.<br> 
-        Now you can use WASD keys to control the second player (the girl) and to gather weapons on board.<br> 
-        Then press T button to change the turn or after moving 120 px the player can not move towards.<br>
-        If the two players are near then the battle starts. <br>
-        In the battle it will be shown the weapons choosed by the players and then the players can start the battle.<br>
-        Then the interface is very simple and the players in turns can use attacks, spells or holy shields.<br>
-        Remember that at anytime you can pause the game by pressing P button.<br>
-        Have fun and play good!
-    </h4>
+    
+    <table>
+        <tr>
+            <th>How to play</th>
+            <th>Gameplay</th>
+            <th>Objective</th>
+        </tr>
+        <tr>
+            <td> 
+                Control Player 1: <br>
+                Use &larr; &uarr; &darr; &rarr; keys on keyboard<br>
+                Control Player 2: <br>
+                Use W A S D keys on keyboard<br>
+                Extra controls: <br>
+                Press the T key on the keyboard to switch turns <br>
+                Press the P key to pause the game <br>
+            </td>
+            <td>
+                Each player can move 120px on each turn <br>
+                Battle starts when both players touch <br>
+                In the battle each player will choose a weapon <br>      
+            </td>
+            <td>
+                The goal of this game is to gather the most powerful weapon and beat the other player in battle <br>
+                The players start with a strength of 25 <br>
+                The strength is increased by gathering powerups: <br>
+                Star: +3 strength, Cake: +5 strength, Bread: +7 strength, Laser: +10 strength <br>
+            </td>
+        </tr>
+    </table>
+    
+    <form>
+        <button id="home"><a href="/board-game/index.html">Back to main menu</a></button>
+    </form>
 
 </body>
 </html>
