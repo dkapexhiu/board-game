@@ -9,7 +9,6 @@ body {
     font-size: 32px;
     margin-bottom: 0px;
 }
-
 #title{
     text-align:center;
     color:white;
@@ -49,7 +48,6 @@ form{
     letter-spacing: .5px;
     cursor: pointer;
 }
-
 #help{
     margin-left: 20px;
     margin-right:20px;
@@ -72,6 +70,20 @@ form{
     display: inline-block;
     color: #fff;
     background-color: red;
+    text-transform: uppercase;
+    border-radius: 21px;
+    letter-spacing: .5px;
+    cursor: pointer;
+}
+#home{
+    margin-left: 20px;
+    margin-right:20px;
+    order:3;
+    height: 45px;
+    font-size: .875rem;
+    display: inline-block;
+    color: #fff;
+    background-color: purple;
     text-transform: uppercase;
     border-radius: 21px;
     letter-spacing: .5px;
