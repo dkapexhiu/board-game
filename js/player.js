@@ -169,7 +169,7 @@ Player.prototype.move = function(player_coordinates) {
     if(this.left || this.right || this.up || this.down) {
         //console.log(this.adjacentToPlayer);
         if(this.adjacentToPlayer[0] == true && this.adjacentToPlayer[1] == true){
-            window.location.href = '../board-game/battle-system/index.html';
+            window.location.href = '/board-game/battle-system/index.html';
         }
     }
 
