@@ -1,4 +1,6 @@
 body {
   background-image: url("/board-game/img/credits.jpg");
   color: white;
+  font-size: 35px;
+  font-weight: bold;
 }
