@@ -60,7 +60,7 @@ function init() {
         for (var j = 0; j < board.height; j++)
             if (board.level[i][j] !== 2) {
                 player[0] = new Player(player1, 0, block_size, block_size,  false);
-                player[1] = new Player(player2, 1, width-2*block_size, height-2*block_size, true);
+                player[1] = new Player(player2, 1, width-2*block_size, height-2*block_size, false);
             }
 
     // Initialize players coordinates
